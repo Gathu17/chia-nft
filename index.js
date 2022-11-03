@@ -3,7 +3,8 @@ const fs = require('fs');
 const csv = require('csv-parser');
 const json2csv = require('json2csv').parse;
 
-var dataArray = []
+var dataArray = [];
+var fileName = 'Team x'
 fs.createReadStream('./Team Clutch.csv')
 .pipe(csv())
 .on('data', function(data){
@@ -54,6 +55,6 @@ fs.createReadStream('./Team Clutch.csv')
 .on('end',function(){
     //some final operation
     var result = json2csv({ data: dataArray, fields: Object.keys(dataArray[0]) });
-    fs.writeFileSync("Team X", result);
+    fs.writeFileSync(fileName, result);
 });  
 
