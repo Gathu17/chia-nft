@@ -43,11 +43,11 @@ function generateHash(fileName){ fs.createReadStream(`./${fileName}.csv`)
                 ],  
                 "collection": {
                     "name": "Zuri NFT Tickets for Free",
-                    "id": `${data.UUID}`,
+                    "id": "b774f676-c1d5-422e-beed-00ef5510c64d",
                     "attributes": [
                         {
                             "type": "description",
-                            "value": ``
+                            "value": "Rewards for accomplishments during HNGi9"
                         },
                        
                     ]
