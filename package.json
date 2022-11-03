@@ -1,0 +1,21 @@
+{
+  "name": "hng-team-task",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "csv": "^6.2.1",
+    "csv-parser": "^3.0.0",
+    "fs": "^0.0.1-security",
+    "json2csv": "^5.0.7",
+    "nft.storage": "^7.0.0",
+    "parser": "^0.1.4"
+  }
+}
