@@ -12,15 +12,15 @@ fs.createReadStream('./Team Clutch.csv')
         console.log("Name is: "+ data.Filename);
         console.log("Age is: "+data.UUID);
 
-        //perform the operation
+        
         const JSONfile = 
             {
                 "format": "CHIP-0007",
                 "name": `${data.Filename}`,
                 "description": `${data.Description}`,
-                "minting_tool": "Team Clutch",
+                "minting_tool": `${fileName}`,
                 "sensitive_content": false,
-                "series_number": `${data.Serial_Number}`,
+                "series_number": `${data.SeriesNumber}`,
                 "series_total": 40,
                 "attributes": [
                     {
@@ -29,7 +29,7 @@ fs.createReadStream('./Team Clutch.csv')
                     },
                 ],  
                 "collection": {
-                    "name": `${data.Filename}`,
+                    "name": "Zuri NFT Tickets for Free",
                     "id": `${data.UUID}`,
                     "attributes": [
                         {
@@ -53,7 +53,7 @@ fs.createReadStream('./Team Clutch.csv')
     }
 })
 .on('end',function(){
-    //some final operation
+    
     var result = json2csv({ data: dataArray, fields: Object.keys(dataArray[0]) });
     fs.writeFileSync(fileName, result);
 });  
