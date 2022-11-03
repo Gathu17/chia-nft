@@ -16,6 +16,7 @@
     "fs": "^0.0.1-security",
     "json2csv": "^5.0.7",
     "nft.storage": "^7.0.0",
-    "parser": "^0.1.4"
+    "parser": "^0.1.4",
+    "readline": "^1.3.0"
   }
 }

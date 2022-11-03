@@ -4,13 +4,26 @@ const csv = require('csv-parser');
 const json2csv = require('json2csv').parse;
 
 var dataArray = [];
-var fileName = 'Team x'
-fs.createReadStream('./Team Clutch.csv')
+var fileName = ''
+var filePath = ""
+const readline = require('readline').createInterface({
+    input: process.stdin,
+    output: process.stdout,
+  });
+  
+  readline.question(`What is the filename?`, name => {
+    fileName = name;
+    generateHash(fileName)
+    console.log(`Hi ${fileName}!`);
+    readline.close();
+  });
+  
+
+function generateHash(fileName){ fs.createReadStream(`./${fileName}.csv`)
 .pipe(csv())
 .on('data', function(data){
     try {
-        console.log("Name is: "+ data.Filename);
-        console.log("Age is: "+data.UUID);
+        
 
         
         const JSONfile = 
@@ -55,6 +68,6 @@ fs.createReadStream('./Team Clutch.csv')
 .on('end',function(){
     
     var result = json2csv({ data: dataArray, fields: Object.keys(dataArray[0]) });
-    fs.writeFileSync(fileName, result);
+    fs.writeFileSync(fileName + '(2)', result)
 });  
-
+}
